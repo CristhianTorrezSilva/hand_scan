@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-# Load gambar telapak tangan (pastikan ukuran sesuai dengan kamera)
+# Load gambar telapak tangan 
 template = cv2.imread('hand_template.png', cv2.IMREAD_UNCHANGED)
 template_h, template_w = template.shape[:2]
 
@@ -58,12 +58,12 @@ while cap.isOpened():
             x_min, x_max = int(min(x_coords) * w), int(max(x_coords) * w)
             y_min, y_max = int(min(y_coords) * h), int(max(y_coords) * h)
 
-            # Jika bounding box berada dalam area template
+            # Bounding
             if (center_x < x_min < center_x + template_w and
                 center_y < y_min < center_y + template_h and
                 center_x < x_max < center_x + template_w and
                 center_y < y_max < center_y + template_h):
-                # Jika bounding box berada dalam area template, tampilkan video vid.mp4
+                # Bounding box berada dalam area template
                 video = cv2.VideoCapture('vid.mp4')
                 while video.isOpened():
                     ret_vid, frame_vid = video.read()
