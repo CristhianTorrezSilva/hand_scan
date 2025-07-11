@@ -59,7 +59,7 @@ while cap.isOpened():
                 center_x < x_max < center_x + template_w and
                 center_y < y_max < center_y + template_h):
 
-                os.startfile("madremiawilly.mp4")
+                os.startfile("yourfile.mp4")
                 video_shown = True
 
     cv2.imshow('Hand Scanner', frame)
